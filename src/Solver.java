@@ -67,6 +67,7 @@ public class Solver implements AM
             newPoint.execute("Palindrom");
             newChannel.write(currentStart);
             newChannel.write(currentEnd);
+            newChannel.write(index);
         }
 
         List<Integer> result = new ArrayList<>();

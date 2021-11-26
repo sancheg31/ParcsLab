@@ -14,6 +14,7 @@ public class Palindrom implements AM
 
         int start = info.parent.readInt();
         int end = info.parent.readInt();
+        int channelIndex = info.parent.readInt();
 
         for (int number = start; number < end; ++number)
         {
@@ -28,8 +29,16 @@ public class Palindrom implements AM
 
     public boolean IsPalindrome(int number)
     {
-        String intStr = String.valueOf(Math.abs(number));
-        return intStr.equals(new StringBuilder(intStr).reverse().toString());
+        int palindrome = Math.abs(number);
+        int reverse = 0;
+
+        while (palindrome != 0) {
+            int remainder = palindrome % 10;
+            reverse = reverse * 10 + remainder;
+            palindrome = palindrome / 10;
+        }
+
+        return number == reverse;
     }
 
 
