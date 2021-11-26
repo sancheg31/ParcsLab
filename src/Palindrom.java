@@ -15,10 +15,6 @@ public class Palindrom implements AM
         int start = info.parent.readInt();
         int end = info.parent.readInt();
 
-        long startTime = System.nanoTime();
-
-        System.out.println("worker range: " + start + " - " + end);
-
         for (int number = start; number < end; ++number)
         {
             if (IsPalindrome(number))
@@ -26,11 +22,6 @@ public class Palindrom implements AM
                 result.add(number);
             }
         }
-
-        long endTime = System.nanoTime();
-
-        System.out.println("Palindromes count: " + result.size());
-        System.out.println("Time: " + ((endTime - startTime) / 1000000) + "ms");
 
         info.parent.write(result);
     }

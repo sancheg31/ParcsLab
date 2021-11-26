@@ -57,6 +57,8 @@ public class Solver implements AM
             int currentStart = index * length;
             int currentEnd = (index + 1) * length + ((threads - index - 1 < remainder) ? 1 : 0);
 
+            System.out.println(index + " worker range: " + currentStart + " - " + currentEnd);
+
             point newPoint = info.createPoint();
             channel newChannel = newPoint.createChannel();
             channels.add(newChannel);
