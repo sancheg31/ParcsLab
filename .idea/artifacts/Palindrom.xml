@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Palindrom">
+    <output-path>$PROJECT_DIR$/out</output-path>
+    <root id="archive" name="Palindrom.jar">
+      <element id="file-copy" path="$PROJECT_DIR$/src/Palindrom.java" />
+    </root>
+  </artifact>
+</component>
