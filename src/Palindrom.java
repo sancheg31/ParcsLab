@@ -23,7 +23,7 @@ public class Palindrom implements AM
                 result.add(number);
             }
         }
-
+        System.out.println("Worker result: " + result.size());
         info.parent.write(result);
     }
 

@@ -60,20 +60,26 @@ public class Solver implements AM
             System.out.println(index + " worker range: " + currentStart + " - " + currentEnd);
 
             point newPoint = info.createPoint();
-            channel newChannel = newPoint.createChannel();
-            channels.add(newChannel);
-            points.add(newPoint);
-
             newPoint.execute("Palindrom");
+
+            channel newChannel = newPoint.createChannel();
             newChannel.write(currentStart);
             newChannel.write(currentEnd);
             newChannel.write(index);
+
+            channels.add(newChannel);
+            points.add(newPoint);
         }
 
         List<Integer> result = new ArrayList<>();
         for (int index = 0; index < threads; ++index)
         {
-            result.addAll((Collection<? extends Integer>) channels.get(index).readObject());
+            ArrayList<Integer> threadResult = (ArrayList<Integer>) channels.get(index).readObject();
+            System.out.println("Worker result: " + threadResult.size());
+            for (int j = 0; j < threadResult.size(); ++j)
+            {
+                result.add(threadResult.get(j));
+            }
         }
 
         return result;
