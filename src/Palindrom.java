@@ -16,6 +16,8 @@ public class Palindrom implements AM
         int end = info.parent.readInt();
         int channelIndex = info.parent.readInt();
 
+        System.out.println(channelIndex + " worker range: " + start + " - " + end);
+
         for (int number = start; number < end; ++number)
         {
             if (IsPalindrome(number))
@@ -23,7 +25,7 @@ public class Palindrom implements AM
                 result.add(number);
             }
         }
-        //System.out.println("Worker result: " + result.size());
+        System.out.println("Worker result: " + result.size());
         info.parent.write(result);
     }
 
