@@ -4,6 +4,7 @@
     <root id="archive" name="Palindrom.jar">
       <element id="extracted-dir" path="$PROJECT_DIR$/out/parcs.jar" path-in-jar="/" />
       <element id="file-copy" path="$PROJECT_DIR$/src/Palindrom.java" />
+      <element id="file-copy" path="$PROJECT_DIR$/out/production/Cloud/Palindrom.class" />
     </root>
   </artifact>
 </component>

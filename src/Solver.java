@@ -65,7 +65,8 @@ public class Solver implements AM
             channels.add(newChannel);
             points.add(newPoint);
 
-            newPoint.execute("Palindrom");            newChannel.write(currentStart);
+            newPoint.execute("Palindrom");
+            newChannel.write(currentStart);
             newChannel.write(currentEnd);
             newChannel.write(index);
 
