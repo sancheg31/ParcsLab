@@ -10,8 +10,8 @@ public class Solver implements AM
     public static void main(String[] args) throws Exception {
 
         task currentTask = new task();
-        currentTask.addJarFile("Palindrom.jar");
         currentTask.addJarFile("Solver.jar");
+        currentTask.addJarFile("Palindrom.jar");
 
         System.out.println("Waiting for result...");
 
@@ -65,8 +65,7 @@ public class Solver implements AM
             channels.add(newChannel);
             points.add(newPoint);
 
-            newPoint.execute("Palindrom");
-            newChannel.write(currentStart);
+            newPoint.execute("Palindrom");            newChannel.write(currentStart);
             newChannel.write(currentEnd);
             newChannel.write(index);
 
